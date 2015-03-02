@@ -1,0 +1,276 @@
+\documentclass{bioinfo}
+\copyrightyear{2014}
+\pubyear{2014}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{ctable}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\epstopdfsetup{outdir=./}
+\begin{document}
+\firstpage{1}
+
+\title[Genome assembly]{Genome assembly improvement studies using multi-platform sequencing data}
+\author[Kavak \textit{et~al}]{P\i nar Kavak\,$^{1,2,}$\footnote{to whom correspondence should be addressed}, Bekir Erg\"{u}ner\,$^{1}$, Duran \"{U}stek\,$^{3}$, Bayram Y\"{u}ksel\,$^{4}$, Mahmut \c{S}amil Sa\u{g}\i ro\u{g}lu\,$^1$, Tunga G\"{u}ng\"{o}r\,$^{2}$, and Can Alkan\,$^{5}$}
+\address{$^{1}$Advanced Genomics and Bioinformatics Research Group (\.{I}GBAM), B\.{I}LGEM, The Scientific and Technological Research Council of Turkey (T\"{U}B\.{I}TAK), 41470 Gebze, Kocaeli, Turkey.\\
+$^{2}$Department of Computer Engineering, Bo\u{g}azici University, 34342 Bebek, \.{I}stanbul, Turkey.\\
+$^{3}$Advanced Genomics and Bioinformatics Research Group (\.{I}GBAM), MAM, The Scientific and Technological Research Council of Turkey (T\"{U}B\.{I}TAK), 41470 Gebze, Kocaeli, Turkey.\\
+$^{4}$Department of Medical Genetics, \.{I}stanbul Medipol University, 34810 Beykoz, \.{I}stanbul, Turkey.\\
+$^{5}$Computer Engineering Department, Bilkent University, 06800 Bilkent, Ankara, Turkey.}
+%\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
+
+%\editor{Associate Editor: XXXXXXX}
+
+\maketitle
+
+\begin{abstract}
+
+\section{Motivation:}
+\textit{De novo} assembly problem with the short reads of next generation sequencing technologies still waits for innovative approaches. There exist assembly programs with different capabilities depending on the sequencing technology. Some of them are hybrid assemblers that use more than one input type. Improving the resulting assembly is another specialty. We propose a new method to improve the assembly when there is more than one input type obtained from different sequencing technologies: Illumina, 454 and Ion-Torrent. We also compare the results with the existing hybrid assemblers Celera and Masurca.
+
+\section{Contact:} \href{pinar.kavak@tubitak.gov.tr}
+\end{abstract}
+
+\section{Introduction}
+
+After the revolution in the genome sciences, traditional sequencing technologies mostly give place to high throughput next generation sequencing (NGS) technologies, so the read lengths became shorter and the amount of the produced data increased. One of the main problems of the genome analysis, \textit{de novo} assembly with high throughput sequences is a though problem. The difficulty comes from the genome itself in the first place. The genome structure is already repetitive and duplicated which disables to decide on which part belongs to which location. Second part of the difficulty comes from the input. Assembling complete sequences from the short and error prone reads produced by the next generation sequencing (NGS) technologies becomes complicated.
+
+There are three kinds of algorithms mainly used to do genome assembly: i) greedy algorithms \cite{ssake:2007,sharcgs:2007,vcake:2007}, ii) overlap-layout-consensus graphs \cite{celera:2000, sga:2012, hapsemblerDonmez:2011}, and iii) de-Bruijn graphs \cite{eulerPevzner:2008, zerbino:2009, abyssSimpson:2009, allpaths:2008, soapdenovo:2009}. Greedy algorithms are generally used for small genome assemblies, since they use more memory and time they are incapable of assembling big genomes. Overlap-layout-consensus graphs perform best with long read libraries. They use pairwise alignments (overlaps) to find a layout and generate a consensus assembly by finding a Hamiltonian path on the layout. de-Bruijn graphs are designed for assembling short read libraries. They use a kmer graph approach, so they do not need either obtaining or saving all pairwise alignments. An Eulerian path is followed on the graph to find the consensus assembly in de-Bruijn graphs. There is a fourth hybrid method which uses multiple read libraries to exploit their strengths and to meet one type's deficit with the other.
+
+In this work, we propose improving the resulting assembly by using different types of read libraries. We exploit the advantages of both short and long reads. Aligning the contigs obtained from short reads belong to a sample onto the contigs obtained from long reads belong to the same sample, and correcting the assembly according to the alignment, improves the resulting assembly. With this study we have the opportunity to compare Ion-Torrent and Roche(454) reads, how helpful they are to obtain a better assembly. We also compare the performances of other hybrid assemblers with our method. The results show that our method helps improving the assembly and it gives better results than the existing hybrid assemblers. In Section \ref{meth}, we talk about the method we used in this study. In Section \ref{res}, we present the results. In Section \ref{conc}, we conclude our work.
+
+\section{Methods}
+\label{meth}
+
+We have high throughput bacterial artificial chromosomes (BAC) data (E-coli with human chromosome 13) sequenced on three different technologies: Illumina, 454, and Ion-Torrent. Each data type has its own properties. Illumina has highly accurate (38 phred score mean sequence quality) but short reads, each of them is exactly 101bp length. 
+454 has longer (40bp-1027bp, average read length is 650bp) reads but it has higher error rate (28 phred score mean sequence quality) than Illumina. 
+Ion-torrent is cheaper than 454 and longer than Illumina, but Ion-torrent reads are not accurate as well. 
+Ion-Torrent has read length range of 5bp to 201bp (average read length is 127bp) and the accuracy is also lower than both Illumina and 454 reads (24 phred score mean sequence quality). 
+Data properties are shown on Table \ref{tab:dataprop}.
+We also have the reference sequence to test our method.
+We divided the data into two groups: Illumina \& 454 and Illumina \& Ion-torrent, and worked on each group seperately, to exploit the advantages of each data type and to compare 454 and Ion-Torrent data. We applied the same procedure with the same parameters to both groups.
+
+\ctable[
+      cap     = {},
+      % 
+      caption = {Properties of the data},
+      % 
+      label   = {tab:dataprop},
+      doinside = \normal,
+      width = 0.95\textwidth,
+      %
+      %
+      % pos = h!tb,
+      star
+]{>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}
+X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}}
+{
+      \tnote[]{}
+
+}
+{ \FL
+Technology & Length range & Mean length & Mean seq. qual & Paired \\ \ML
+Illumina & 101bp & 101bp & 38 & paired \\
+\addlinespace[1mm]
+Roche/454 & 40bp-1027bp & 650bp & 28 & single-end \\
+\addlinespace[1mm]
+Ion-torrent & 5bp-201bp & 127bp & 24 & single-end \\
+\LL
+}
+
+First, we applied the below pre-processing methods on the reads before the assembly process:
+
+\textbf{1)} Eliminated the reads with low average quality value. The reads with average quality of 17 phred score, meaning $ \leq \sim$2\% error rate, or less are discarded.
+
+\textbf{2)} Eliminated the reads with high N-density. High N-density means 1/10'th of the read consists of Ns. 
+
+\textbf{3)} We also applied the pre-processing operations of each assembler, necessarily.
+
+After these pre-processing operations, we continued with the assembly, correction and comparison method below:
+
+\textbf{1)} Insert the highly accurate short reads of Illumina in a de-Bruijn graph based assembler and obtain the consensus sequence as resulting contigs.
+
+We used Velvet\cite{velvetZerbino:2008}, as a de-Bruijn graph based assembler.
+
+\textbf{2)} Map the resulting contigs obtained from short reads, onto the reference genome. 
+
+Before mapping the contigs onto the reference genome we mapped them onto the E-coli genome and discarded those contigs. We used blastn megablast \cite{blast} to map the short read contigs onto the reference genome.
+
+\textbf{3)} Take out the necessary information from the mapping results of Step 2 and calculate the statistics of the resulting contigs.
+
+We took out the necessary information from the output of blastn and calculated the quality measures of the consensus sequence.
+
+\textbf{4)} Insert the longer reads of 454 (or Ion-torrent) in an OLC graph based assembler and obtain the consensus sequence.
+
+We used different OLC assemblers \cite{celera:2000,sga:2012,spadesBankevich:2012} and also tried a de Bruijn assembler \cite{velvetZerbino:2008} just for comparison, for this purpose.
+
+\textbf{5)} Map the resulting contigs obtained from long reads, onto the reference genome. Same method is applied as in Step 2.
+
+\textbf{6)} Calculate the statistics of the resulting contigs. Same method is applied as in Step 3.
+
+\textbf{7)} Map the short read contigs onto the long read contigs. 
+
+Same method as in Step 2, long read contigs are used as the reference.
+
+\textbf{8)} Clean the output, take out the best maps and the start and end locations of the query and the subject, obtain a summarized document.
+
+\textbf{9)} According to the information in the output of Step 8, assemble the query and subject and obtain the new corrected contigs.
+
+The method of concatenation of the mapping query and the subject is shown in Algorithm \ref{assembly}. 
+
+\textbf{10)} Map the corrected contigs onto the reference genome and calculate the statistics. This step is same as combination of Steps 2 and 3.
+
+In addition to applying this method with different OLC assemblers, with 454 and Ion-Torrent data seperately, we also ran other hybrid assemblers such as Celera (CABOG)\cite{cabogMiller:2008} and Masurca \cite{masurcaZimin:2013} with the same input data. 
+
+\begin{algorithm}
+\caption{Assemble the query (short reads contig) and the subject (long reads contig) according to mapping information}
+\label{assembly}
+\begin{algorithmic} 
+\REQUIRE {mapping query and subject}
+\IF{the map does not start at the beginning of the subject}
+\STATE{add the unmapping beginning of the subject}
+\ENDIF
+\IF{the map does not start at the beginning of the query}
+\STATE {add the first part of the query to the result with lowercase letters}
+\ENDIF
+\STATE{add the mapping part of the query}
+\IF{the map does not end at the end of the query}
+\STATE{add the last part of the query to the result with lowercase letters}
+\ENDIF
+\IF{the map does not end at the end of the subject}
+\STATE{add the unmapping end of the subject}
+\ENDIF
+\end{algorithmic}
+\end{algorithm}
+
+
+We present the results in Table \ref{tab:resultsTable}. In the table, `Name' column represents the name of the data group we worked on. Only in the first row we have `Reference', which is not data name. `Length' column represents the total length of the contigs obtained after the assembly or correction. You see that the reference length is 177.480 bases. `\# of Contigs' column represents the number of contigs obtained after the assembly or correction. `\# of Mapped Contigs' column represents the number of mapped contigs onto the reference genome at blastn alignment. `\# of Covered bases' represents how many bases of the reference are covered by these contigs. `Coverage' represents just the \% representation of the reference coverage. This column represents the same information as the previous column, just in a different format. `avg. identity' represents how much of the reference bases are predicted correctly. Calculation of Avg. Identity metric is shown in Algorithm  \ref{avgIdentity}. `\# of Gaps' column represents the number of gaps that cannot be covered on the reference genome by these contigs. `Size of Gaps' column represents the base number of the gaps that cannot be covered on the reference genome.
+
+\begin{algorithm}
+\caption{Calculation of Average Identity}
+\label{avgIdentity}
+\begin{algorithmic} 
+\STATE{avgIdentity=0;}
+\WHILE {there is no more contig}
+\STATE{alignmentLength= matches + mismatches + insertionInQuery;}
+\STATE{identity= matches / alignmentLength;}
+\STATE{avgIdentity+=identity*queryLength;}
+\ENDWHILE
+\STATE{avgIdentity/=sumOfQueryLengths;}
+\end{algorithmic}
+\end{algorithm}
+
+\section{Results}
+\label{res}
+If we look at the Table \ref{res}, the assembly with only short reads that is obtained by Velvet has good success rate with 99\% coverage and 98\% average identity. 
+If we talk about the long reads, Ion-Torrent reads have less performance than 454 reads in general. So, after now when we say long reads we mean the 454 reads.
+
+The results with long reads obtained with Celera have low coverage. 
+Assembly with long reads is not promising with Velvet, either. SGA assembly with long reads seems to have good coverage and identity but the number of contigs is very high. 
+SPADES assembly with long reads has good coverage but not very good average identity. 
+
+When we look at the corrected long read assemblies, correcting the long read assemblies works well with all kind of assemblers. Velvet's corrected long read assemblies have better results than just short read assembly results. For the first cycle, correction increases the Velvet long read assembly coverage and also average identity, but the coverage is not as good as just short read assembly. When we run correction algorithm with more cycles, the result gets more promising. At the third cycle, we have higher coverage and higher identity than just short read assembly. SGA corrected assembly is also promising. It has 99.7\% coverage and 98.1\% average identity at the 4th cycle. SPADES corrected assembly has high coverage but not very high average identity. 
+
+We ran hybrid assemblers Masurca and Celera by importing both short and long reads into the assembler. We did not get good results with Masurca, the coverage is very low. We did not get good results with Celera, either.
+
+We come to a conclusion that using short and long reads seperately with de-Bruijn and OLC assemblers and obtaining assemblies and then using our correction method on the assembly gives better results than just using hybrid assemblers such as Masurca or Celera with short and long reads.
+
+
+\clearpage
+\ctable[star
+	    center
+      cap     = {},
+      % 
+      caption = {Results of the assembly of the BAC data with different methods.},
+      % 
+      label   = {tab:resultsTable},
+      doinside = \footnotesize,
+      width = 1\textwidth,
+      %maxwidth=19cm,
+      %
+      %
+       pos = htb      
+       ]
+       {c>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}
+         X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}
+         X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}}
+       {
+         \tnote[*]{{\tiny IonU represents Ion Torrent unitigs. Unitigs are used when there is not enough number of contigs.}}
+         \tnote[+]{{\tiny 2 represents here, a 2nd run. A second cycle is run to see if there is more improvement.}}
+       }
+       {
+         \FL
+         Name & Length & \# of Contigs & \# of Mapped Contigs & \# of Covered bases & Coverage & avg. Identity & \# of Gaps & Size of Gaps\ML
+		 \textbf{Reference} & 176.843 & 1 & & & & & & \ML
+		 \addlinespace
+		 \textbf{Velvet} & & & & & & & \NN
+         Ill. Velvet & 197.040 & 455 & 437 & 175.172 & 0.99055 & 0.97523 & 39 & 1.671 \ML
+         \textbf{Celera} & & & & & & & \NN       
+         454 Celera & 908.008 & 735 & 735 & 172.563 & 0.97580 & 0.92599 & 18 & 4.280 \NN
+         IonU Celera & 39.347 & 27 & 27 & 47.638 & 0.26938 & 0.96932 & 47 & 129.205 \ML
+         \addlinespace
+         \textbf{Corrected Celera} & & & & & & & \NN
+         Ill-454 Celera & 4.945.785 & 895 & 270 & 176.368 & 0.99731 & 0.94370 & 5 & 475 \NN
+         Ill-454 Celera^2\tmark[+] & 5.078.059 & 890 & 265 & 176.640 & 0.998852 & 0.944527 & 4 & 203 \NN
+         Ill-454 Celera^3 & 5.086.627 & 890 & 265 & 176.640 & 0.998852 & 0.944560 & 4 & 203 \NN
+         Ill-IonU Celera & 93.909 & 30 & 28 & 81.819 & 0.46267 & 0.96327 & 36 & 95.024 \NN
+         Ill-IonU Celera^2 & 145.262 & 30 & 28 & 91.962 & 0.52002 & 0.97412 & 33 & 84.881 \NN
+         Ill-IonU Celera^2 & 216.167 & 30 & 28 & 99.645 & 0.56347 & 0.98066 & 34 & 77.198 \ML
+         \textbf{SGA} & & & & & & & \NN
+         454 SGA & 62.909.254 & 108.095 & 101.514 & 176.546 & 0.99832 & 0.97439 & 1 & 297 \NN
+         Ion SGA & 842.997 & 6.417 & 6.122 & 153.092 & 0.86569 & 0.99124 & 197 & 23.751 \ML	
+         \addlinespace
+         \textbf{Corrected SGA} & & & & & & & \NN
+         Ill-454 SGA & 295.009 & 335 & 335 & 176.757 & 0.99951 & 0.96823 & 5 & 86 \NN
+         Ill-454 SGA^2 & 279.034 & 305 & 305 & 176.757 & 0.99951 & 0.96769 & 5 & 86 \NN
+         Ill-Ion SGA & 197.509 & 291 & 291 & 175.052 & 0.98987 & 0.97501 & 45 & 1.791 \NN
+         Ill-Ion SGA^2 & 203.064 & 291 & 291 & 175.676 & 0.99340 & 0.97413 & 34 & 1.167 \NN
+         Ill-Ion SGA^2 & 204.524 & 291 & 291 & 175.677 & 0.99341 & 0.97405 & 34 & 1.166 \ML
+         \textbf{SPADES} & & & & & & & \NN
+         454 SPADES & 12.307.761 & 49.824 & 49.691 & 176.843 & 1.0 & 0.98053 & 0 & 0 \NN
+         Ion SPADES & 176.561 & 110 & 107 & 167.890 & 0.94937 & 0.92909 & 9 & 8.953 \ML	
+         \addlinespace
+         \textbf{Corrected SPADES} & & & & & & & \NN
+         Ill-454 SPADES & 290.702 & 298 & 298 & 176.454 & 0.99780 & 0.96538 & 5 & 389 \NN
+         Ill-454 SPADES^2 & 290.917 & 297 & 297 & 176.454 & 0.99780 & 0.96530 & 5 & 389 \NN
+         Ill-454 SPADES^3 & 291.653 & 297 & 297 & 176.454 & 0.99780 & 0.96527 & 5 & 389 \NN
+         Ill-Ion SPADES & 198.665 & 52 & 52 & 171.977 & 0.97248 & 0.94215 & 4 & 4.866 \NN
+         Ill-Ion SPADES & 200.307 & 52 & 52 & 172.101 & 0.97319 & 0.94230 & 2 & 4.742 \ML
+         \textbf{Masurca} & & & & & & & \NN
+         Ill-454 Masurca & 380 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \NN
+         Ill-Ion Masurca & 2.640 & 8 & 8 & 1.952 & 0.01104 & 0.98223 & 9 & 174.891 \ML
+ 		\textbf{Celera-CABOG} & & & & & & & \NN
+         Ill-454 Celera & X & X & X & X & X & X & X & X \NN
+         Ill-Ion Celera & 0 & 0 & 0 & 0 & 0.0 & 0.0 & 0 & 0.0 \ML
+         \LL
+       }
+\clearpage
+\section{Conclusion}
+\label{conc}
+Assembly correction by using advantages of different technologies improves the resulting assembly. In this paper, we presented one way of improving the assembly by correcting the long read assembly with short read contigs. Our results show that our method is useful. Still, we need to discover new ways of exploiting the strong points of the reads obtained from different NGS technologies.
+
+
+
+\section*{Acknowledgement}
+\paragraph{Funding\textcolon}
+The project is supported by the Republic of Turkey Ministry of Development Infrastructure Grant (no: 2011K120020) and BILGEM \-- TUBITAK (The Scientific and Technological Research Council of Turkey) (grant no: T439000).\\
+
+
+%\bibliographystyle{natbib}
+%\bibliographystyle{achemnat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{bioinformatics}
+%
+%\bibliographystyle{plain}
+%
+%\bibliography{Document}
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}
