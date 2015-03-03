@@ -1,6 +1,4 @@
-\documentclass{bioinfo}
-\copyrightyear{2015}
-\pubyear{2015}
+\documentclass[12pt]{article}
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{caption}
@@ -10,42 +8,39 @@
 %\usepackage[utf8]{inputenc}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{setspace} 
+%\usepackage{fullpage}
+\usepackage[top=1.5in, bottom=1.5in, left=1in, right=1in]{geometry}
 \epstopdfsetup{outdir=./}
 \begin{document}
-\firstpage{1}
 
-\title[Genome assembly]{Improving genome assemblies using multi-platform sequence data}
 
-\author[Kavak \textit{et~al}]{
-  P\i nar Kavak\,$^{1,2,}$\footnote{to whom correspondence should be addressed},
-  Bekir Erg\"{u}ner\,$^{1}$, 
-  Duran \"{U}stek\,$^{3}$, 
-  Bayram Y\"{u}ksel\,$^{4}$, 
+ \renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+
+\begin{center}
+  {\bf Improving genome assemblies using multi-platform sequence data}\\
+
+  P\i nar Kavak\,$^{1,2,}$\footnote{to whom correspondence should be addressed},  Bekir Erg\"{u}ner\,$^{1}$,  Duran \"{U}stek\,$^{3}$,  Bayram Y\"{u}ksel\,$^{4}$, \\
   Mahmut \c{S}amil Sa\u{g}\i ro\u{g}lu\,$^1$, 
   Tunga G\"{u}ng\"{o}r\,$^{2}$, and 
-  Can Alkan\,$^{5,*}$
-}
-\address{
+  Can Alkan\,$^{5,*}$ \\ 
+
+  {\scriptsize
   $^{1}$Advanced Genomics and Bioinformatics Research Group (\.{I}GBAM), B\.{I}LGEM, The Scientific and Technological Research Council of Turkey (T\"{U}B\.{I}TAK), 41470 Gebze, Kocaeli, Turkey.\\
-  $^{2}$Department of Computer Engineering, Bo\u{g}azici University, 34342 Bebek, \.{I}stanbul, Turkey.\\
+  $^{2}$Department of Computer Engineering, Bo\u{g}azi\c{c}i University, 34342 Bebek, \.{I}stanbul, Turkey.\\
   $^{3}$Advanced Genomics and Bioinformatics Research Group (\.{I}GBAM), MAM, The Scientific and Technological Research Council of Turkey (T\"{U}B\.{I}TAK), 41470 Gebze, Kocaeli, Turkey.\\
   $^{4}$Department of Medical Genetics, \.{I}stanbul Medipol University, 34810 Beykoz, \.{I}stanbul, Turkey.\\
   $^{5}$Department of Computer Engineering, Bilkent University, 06800 Bilkent, Ankara, Turkey.
-}
-
-\history{}
-
-\editor{}
-
-\maketitle
+  }
+\end{center}
 
 \begin{abstract}
-
-\section{Motivation:}
 \textit{De novo} assembly problem with the short reads of next generation sequencing technologies still waits for innovative approaches. There exist assembly programs with different capabilities depending on the sequencing technology. Some of them are hybrid assemblers that use more than one input type. Improving the resulting assembly is another specialty. We propose a new method to improve the assembly when there is more than one input type obtained from different sequencing technologies: Illumina, 454 and Ion-Torrent. We also compare the results with the existing hybrid assemblers Celera and Masurca.
 
-\section{Contact:} \href{pinar.kavak@tubitak.gov.tr}{pinar.kavak@tubitak.gov.tr}, \href{calkan@cs.bilkent.edu.tr}{calkan@cs.bilkent.edu.tr}
+{\bf Contact:} \href{pinar.kavak@tubitak.gov.tr}, \href{calkan@cs.bilkent.edu.tr}
 \end{abstract}
+
+\onehalfspacing
 
 \section{Introduction}
 
@@ -283,7 +278,7 @@ The project is supported by the Republic of Turkey Ministry of Development Infra
 %\bibliography{Document}
 
 \newpage
-\bibliographystyle{natbib}
+\bibliographystyle{abbrv}
 \bibliography{ref}
 
 \end{document}
