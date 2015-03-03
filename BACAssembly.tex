@@ -10,6 +10,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \epstopdfsetup{outdir=./}
+
 \begin{document}
 \firstpage{1}
 
@@ -54,8 +55,6 @@ We also have the reference sequence to test our method.
 We divided the data into two groups: Illumina \& 454 and Illumina \& Ion-torrent, and worked on each group seperately, to exploit the advantages of each data type and to compare 454 and Ion-Torrent data. We applied the same procedure with the same parameters to both groups.
 
 \ctable[
-      cap     = {},
-      % 
       caption = {Properties of the data},
       % 
       label   = {tab:dataprop},
@@ -105,7 +104,7 @@ We took out the necessary information from the output of blastn and calculated t
 
 \textbf{4)} Insert the longer reads of 454 (or Ion-torrent) in an OLC graph based assembler and obtain the consensus sequence.
 
-We used different OLC assemblers \cite{celera:2000,sga:2012,spadesBankevich:2012} and also tried a de Bruijn assembler \cite{velvetZerbino:2008} just for comparison, for this purpose.
+We used different OLC assemblers \cite{celera:2000,sga:2012} and also tried a de Bruijn assembler \cite{spadesBankevich:2012} just for comparison, for this purpose.
 
 \textbf{5)} Map the resulting contigs obtained from long reads, onto the reference genome. Same method is applied as in Step 2.
 
@@ -270,7 +269,28 @@ The project is supported by the Republic of Turkey Ministry of Development Infra
 %\bibliography{Document}
 
 \newpage
-\bibliographystyle{plain}
-\bibliography{ref}
+\bibliographystyle{elsarticle-harv} 
+%\bibliographystyle{plain} 
+%\bibliography{ref}
+\begin{thebibliography}{}
+\bibitem[S.Altschul {\it et~al} (1990)]{blast} S.Altschul {\it et~al} (1990)Basic local alignment search tool, \textit{Journal of Molecular Biology}, {\bf 215(3)}:403-410.
+\bibitem[A.Bankevich {\it et~al} (2012)]{spadesBankevich:2012} A.Bankevich {\it et~al} (2012) SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing, \textit{Journal of Computational Biology}, {\bf 19(5)}:455-477.
+\bibitem[J.Butler {\it et~al}.(2008)]{allpaths:2008} J.Butler \textit{et~al} (2008) ALLPATHS: De novo assembly of whole-genome shotgun microreads, {\it Genome Research}, {\bf 18}:810-820.
+\bibitem[M.J.Chaisson (2008)]{eulerPevzner:2008} M.J.Chaisson \textit{et~al} (2008) De novo fragment assembly with short mate-paired reads: Does the read length matter?, \textit{Genome Research}, {\bf 19(2)}:336-346.
+\bibitem[J.C.Dohm {\it et~al} (2007)]{sharcgs:2007} J.C.Dohm \textit{et~al} (2007) SHARCGS, a fast and highly accurate short-read assembly algorithm for de novo genomic sequencing, \textit{Genome Research}, {\bf 17(11)}:1697-1706.
+\bibitem[N.Donmez, M.Brudno (2011)]{hapsemblerDonmez:2011} N.Donmez, M.Brudno (2008) Hapsembler: An Assembler for Highly Polymorphic Genomes, \textit{Proceedings of the 15th Annual International Conference on Research in Computational Molecular Biology}, {\bf pages}:38-52.
+\bibitem[W.R.Jeckl {\it et~al} (2007)]{vcake:2007} W.R.Jeckl \textit{et~al} (2007) Extending assembly of short DNA sequences to handle error, \textit{Bioinformatics}, {\bf 23(21)}:2942-2944.
+\bibitem[R.Li {\it et~al} (2009)]{soapdenovo:2009} R.Li \textit{et~al} (2009) De novo assembly of human genomes with massively parallel short read sequencing, \textit{Genome Research}, {\bf 20(2)}:265-272.
+\bibitem[J.R.Miller {\it et~al} (2008)]{cabogMiller:2008} J.R.Miller \textit{et~al} (2008) Aggressive assembly of pyrosequencing reads with mates, \textit{Bioinformatics}, {\bf 24(24)}:2818-2824.
+\bibitem[E.W.Myers {\it et~al} (2000)]{celera:2000} E.W.Myers \textit{et~al} (2000) A Whole-Genome Assembly of Drosophila, \textit{Science}, {\bf 287}:2196-2204.
+\bibitem[J.Simpson {\it et~al} (2012)]{sga:2012} J.Simpson \textit{et~al} (2012) Efficient de novo assembly of large genomes using compressed data structures, \textit{Genome Research}, {\bf 22}:549-556.
+\bibitem[J. Simpson, R.Durbin {\it et~al} (2009)]{abyssSimpson:2009} J.Simpson, R.Durbin (2009) ABySS: A parallel assembler for short read sequence data, \textit{Genome Research}, {\bf 19(6)}:1117-1123.
+\bibitem[R.L.Warren {\it et~al} (2007)]{ssake:2007} R.L.Warren \textit{et~al} (2007) Assembling millions of short DNA sequences using SSAKE, \textit{Bioinformatics}, {\bf 23(4)}:500-501.
+\bibitem[D.Zerbino (2009)]{zerbino:2009} D.Zerbino (2009) Genome assembly and comparison using de Bruijn graphs, \textit{University of Cambridge}.
+\bibitem[D.Zerbino, E.Birney (2008)]{velvetZerbino:2008} D.Zerbino, E.Birney (2000) Velvet: Algorithms for de novo short read assembly using de Bruijn graphs, \textit{Genome Research}, {\bf 18(5)}:821-829.
+\bibitem[A.Zimin {\it et~al} (2013)]{masurcaZimin:2013} A.Zimin \textit{et~al} (2013) The MaSuRCA genome Assembler, \textit{Bioinformatics}, {\bf 29(21)}:2669-2677.
+
+%\end{thebibliography}
+\end{document}
 
 \end{document}
