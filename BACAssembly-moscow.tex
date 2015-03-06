@@ -192,7 +192,7 @@ We interpret these results as using short and long reads seperately with de Brui
       caption = {Results of the assembly of the BAC data with different methods.},
       % 
       label   = {tab:resultsTable},
-      doinside = \scriptsize,
+      doinside = \tiny,
       width = 1\textwidth,
       %maxwidth=19cm,
       %
@@ -203,7 +203,8 @@ We interpret these results as using short and long reads seperately with de Brui
          X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}
          X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}}
        {
-         \tnote[+]{{\tiny 2 represents here, a 2nd run. A second cycle is run to see if there is more improvement.}}
+         \tnote[]{{\tiny Name: The name of the data group that constitute the assembly; \# of contigs: The number of contigs belong to the resulting assembly; \# of Mapped Contigs: The number of contigs that successfully mapped onto the reference sequence; \# of Covered bases: The number of bases on the reference sequence that are covered by the assembly; Coverage: Percentage of covered reference; Avg. identity: Percentage of the correctly predicted reference bases; \# of Gaps: The number of gaps that cannot be covered on the reference genome; Size of Gaps: Total number of bases on the gaps.}}
+         \tnote[*]{{\tiny 2 represents the results of a second cycle. 3 represents a third cycle...etc.}}
        }
        {
          \FL
@@ -218,7 +219,7 @@ We interpret these results as using short and long reads seperately with de Brui
          \addlinespace
          \textbf{Corrected Celera} & & & & & & & \NN
          Ill-454 Celera & 4.945.785 & 895 & 270 & 176.368 & 0.99731 & 0.94370 & 5 & 475 \NN
-         Ill-454 Celera^2\tmark[+] & 5.078.059 & 890 & 265 & 176.640 & 0.998852 & 0.944527 & 4 & 203 \NN
+         Ill-454 Celera^2\tmark[*] & 5.078.059 & 890 & 265 & 176.640 & 0.998852 & 0.944527 & 4 & 203 \NN
          Ill-454 Celera^3 & 5.086.627 & 890 & 265 & 176.640 & 0.998852 & 0.944560 & 4 & 203 \NN
          Ill-Ion Celera & 93.909 & 30 & 28 & 81.819 & 0.46267 & 0.96327 & 36 & 95.024 \NN
          Ill-Ion Celera^2 & 145.262 & 30 & 28 & 91.962 & 0.52002 & 0.97412 & 33 & 84.881 \NN
@@ -247,7 +248,7 @@ We interpret these results as using short and long reads seperately with de Brui
          Ill-454 Masurca & 380 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \NN
          Ill-Ion Masurca & 2.640 & 8 & 8 & 1.952 & 0.01104 & 0.98223 & 9 & 174.891 \ML
  		\textbf{Celera-CABOG} & & & & & & & \NN
-         Ill-454 Celera & X & X & X & X & X & X & X & X \NN
+         Ill-454 Celera & 1.101.716 & 891 & 891 & 174.330 & 0.98579 & 0.92452 & 12 & 2.513 \NN
          Ill-Ion Celera & 0 & 0 & 0 & 0 & 0.0 & 0.0 & 0 & 0.0 \ML
          \LL
        }
