@@ -48,7 +48,7 @@ After the revolution in the genome sciences, traditional sequencing technologies
 
 There are three kinds of algorithms mainly used to do genome assembly: i) greedy algorithms \cite{ssake:2007,sharcgs:2007,vcake:2007}, ii) overlap-layout-consensus graphs \cite{celera:2000, sga:2012, hapsemblerDonmez:2011}, and iii) de Bruijn graphs \cite{eulerPevzner:2008, zerbino:2009, abyssSimpson:2009, allpaths:2008, soapdenovo:2009}. Greedy algorithms are generally used for small genome assemblies, since they use more memory and time they are incapable of assembling big genomes. Overlap-layout-consensus graphs perform best with long read libraries. They use pairwise alignments (overlaps) to find a layout and generate a consensus assembly by finding a Hamiltonian path on the layout. de Bruijn graphs are designed for assembling short read libraries. They use a kmer graph approach, so they do not need either obtaining or saving all pairwise alignments. An Eulerian path is followed on the graph to find the consensus assembly in de Bruijn graphs. There is a fourth hybrid method which uses multiple read libraries to exploit their strengths and to meet one type's deficit with the other.
 
-In this work, we propose improving the resulting assembly by using different types of read libraries. We exploit the advantages of both short and long reads. Aligning the contigs obtained from short reads belong to a sample onto the contigs obtained from long reads belong to the same sample, and correcting the assembly according to the alignment, improves the resulting assembly. With this study we have the opportunity to compare Ion-Torrent and Roche(454) reads, how helpful they are to obtain a better assembly. We also compare the performances of other hybrid assemblers with our method. The results show that our method helps improving the assembly and it gives better results than the existing hybrid assemblers. In Section \ref{meth}, we talk about the method we used in this study. In Section \ref{res}, we present the results. In Section \ref{conc}, we conclude our work.
+In this work, we propose improving the resulting assembly by using different types of read libraries. We exploit the advantages of both short and long reads. Aligning the contigs obtained from short reads belong to a sample onto the contigs obtained from long reads belong to the same sample, and correcting the assembly according to the alignment, improves the resulting assembly. With this study we have the opportunity to compare Ion-Torrent and Roche(454) reads, how helpful they are to obtain a better assembly. We also compare the performances of other hybrid assemblers with our method. The results show that our method helps improving the assembly and it gives better results than the existing hybrid assemblers. In Section \ref{meth}, we explain out method and in Section \ref{res}, we present the results. In Section \ref{conc}, we conclude our work.
 
 \section{Methods}
 \label{meth}
@@ -67,7 +67,7 @@ We divided the data into two groups: Illumina \& 454 and Illumina \& Ion-Torrent
       caption = {Properties of the data},
       % 
       label   = {tab:dataprop},
-      doinside = \normal,
+      doinside = \normalsize,
       width = 0.95\textwidth,
       %
       %
@@ -185,7 +185,6 @@ Hybrid assemblers Masurca and Celera did not give very good assembly rates when 
 We interpret these results as using short and long reads seperately with de Bruijn and OLC assemblers and obtaining assemblies and then using correction methods like ours on the assembly gives better results than just using hybrid assemblers with both short and long reads.
 
 
-\clearpage
 \ctable[star
 	    center
       cap     = {},
@@ -193,7 +192,7 @@ We interpret these results as using short and long reads seperately with de Brui
       caption = {Results of the assembly of the BAC data with different methods.},
       % 
       label   = {tab:resultsTable},
-      doinside = \tiny,
+      doinside = \scriptsize,
       width = 1\textwidth,
       %maxwidth=19cm,
       %
@@ -204,7 +203,6 @@ We interpret these results as using short and long reads seperately with de Brui
          X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}
          X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}}
        {
-         \tnote[*]{{\tiny IonU represents Ion Torrent unitigs. Unitigs are used when there is not enough number of contigs.}}
          \tnote[+]{{\tiny 2 represents here, a 2nd run. A second cycle is run to see if there is more improvement.}}
        }
        {
@@ -216,15 +214,15 @@ We interpret these results as using short and long reads seperately with de Brui
          Ill. Velvet & 197.040 & 455 & 437 & 175.172 & 0.99055 & 0.97523 & 39 & 1.671 \ML
          \textbf{Celera} & & & & & & & \NN       
          454 Celera & 908.008 & 735 & 735 & 172.563 & 0.97580 & 0.92599 & 18 & 4.280 \NN
-         IonU Celera & 39.347 & 27 & 27 & 47.638 & 0.26938 & 0.96932 & 47 & 129.205 \ML
+         Ion Celera & 39.347 & 27 & 27 & 47.638 & 0.26938 & 0.96932 & 47 & 129.205 \ML
          \addlinespace
          \textbf{Corrected Celera} & & & & & & & \NN
          Ill-454 Celera & 4.945.785 & 895 & 270 & 176.368 & 0.99731 & 0.94370 & 5 & 475 \NN
          Ill-454 Celera^2\tmark[+] & 5.078.059 & 890 & 265 & 176.640 & 0.998852 & 0.944527 & 4 & 203 \NN
          Ill-454 Celera^3 & 5.086.627 & 890 & 265 & 176.640 & 0.998852 & 0.944560 & 4 & 203 \NN
-         Ill-IonU Celera & 93.909 & 30 & 28 & 81.819 & 0.46267 & 0.96327 & 36 & 95.024 \NN
-         Ill-IonU Celera^2 & 145.262 & 30 & 28 & 91.962 & 0.52002 & 0.97412 & 33 & 84.881 \NN
-         Ill-IonU Celera^2 & 216.167 & 30 & 28 & 99.645 & 0.56347 & 0.98066 & 34 & 77.198 \ML
+         Ill-Ion Celera & 93.909 & 30 & 28 & 81.819 & 0.46267 & 0.96327 & 36 & 95.024 \NN
+         Ill-Ion Celera^2 & 145.262 & 30 & 28 & 91.962 & 0.52002 & 0.97412 & 33 & 84.881 \NN
+         Ill-Ion Celera^2 & 216.167 & 30 & 28 & 99.645 & 0.56347 & 0.98066 & 34 & 77.198 \ML
          \textbf{SGA} & & & & & & & \NN
          454 SGA & 62.909.254 & 108.095 & 101.514 & 176.546 & 0.99832 & 0.97439 & 1 & 297 \NN
          Ion SGA & 842.997 & 6.417 & 6.122 & 153.092 & 0.86569 & 0.99124 & 197 & 23.751 \ML	
@@ -253,14 +251,13 @@ We interpret these results as using short and long reads seperately with de Brui
          Ill-Ion Celera & 0 & 0 & 0 & 0 & 0.0 & 0.0 & 0 & 0.0 \ML
          \LL
        }
-\clearpage
 \section{Conclusion}
 \label{conc}
 Assembly correction by using advantages of different technologies improves the resulting assembly. In this paper, we presented one way of improving the assembly by correcting the long read assembly with short read contigs. Our results show that our method is useful. Still, we need to discover new ways of exploiting the strong points of the reads obtained from different NGS technologies.
 
 \section*{Acknowledgement}
 \paragraph{Funding\textcolon}
-The project is supported by the Republic of Turkey Ministry of Development Infrastructure Grant (no: 2011K120020), a B\.{I}LGEM \-- T\"{U}B\.{I}TAK (The Scientific and Technological Research Council of Turkey) grant (no: T439000), and a T\"{U}B\.{I}TAK grant to C.A. (112E135).\\
+The project is supported by the Republic of Turkey Ministry of Development Infrastructure Grant (no: 2011K120020), B\.{I}LGEM \-- T\"{U}B\.{I}TAK (The Scientific and Technological Research Council of Turkey) grant (no: T439000), and T\"{U}B\.{I}TAK grant to C.A.(112E135).\\
 
 
 %\bibliographystyle{natbib}
@@ -273,7 +270,7 @@ The project is supported by the Republic of Turkey Ministry of Development Infra
 %
 %\bibliography{Document}
 
-\newpage
+%\newpage
 %\bibliographystyle{elsarticle-harv}
 \bibliographystyle{abbrv}
 %\bibliography{ref}
