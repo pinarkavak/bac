@@ -1,0 +1,68 @@
+Information for Authors of Computer Science Publications
+
+On this webpage, you will find Springer's guidelines and technical instructions for the preparation of contributions to be published in one of the following series or subseries:
+Lecture Notes in Computer Science (LNCS)
+Lecture Notes in Artificial Intelligence (LNAI)
+Lecture Notes in Bioinformatics (LNBI)
+LNCS Transactions
+Lecture Notes in Business Information Processing (LNBIP)
+Communications in Computer and Information Science (CCIS)
+Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering (LNICST)
+IFIP Advances in Information and Communication Technology (IFIP AICT), formerly known as the IFIP Series;
+Springer has developed LaTeX style files and Word templates to help you prepare your paper. LaTeX is the preferred format (especially for texts containing several formulae), but Word templates are also available.
+Preparing your proceedings paper
+For your convenience, we have summarized in the Author Guidelines document how a proceedings paper should be structured, how elements (headings, figures, references) should be formatted using our predefined styles, etc.
+We also give some insight on how your paper will be typeset at Springer.
+The PDF of the Authors Guidelines can be downloaded here or as part of the zip files containing the complete sets of instructions and templates for the different text preparation systems.
+Please download LNCS Author Instructions.pdf (version of 26-FEB-2015)
+Copyright form
+Each contribution must be accompanied by a Springer copyright form, a so-called 'Consent to Publish' form. Modified forms are not acceptable.
+Authors will be asked to transfer the copyright of the paper to the Springer. This will ensure the widest possible protection and dissemination of information under copyright laws.
+One author may sign on behalf of all of the authors of a particular paper. In this case, the author signs for and accepts responsibility for releasing the material on behalf of any and all co-authors.
+A prefilled copyright form is usually made available to authors by the volume editor. In the case of a proceedings volume, it can often be downloaded form the conference website.
+Below you will find a download link for the default form for a "Consent to Publish" in the Lecture Notes in Computer Science (LNCS) series.
+At the soonest a link is provided to a list of copyright forms for the various series and places of location.
+default LNCS_Copyright_Form
+Permissions
+Authors wishing to include figures, tables, or text passages that have already been published elsewhere are required to obtain permission from the copyright owner(s) for both the print and online format before their paper is submitted to Springer.
+CS Proceedings and Other Multiauthor Volumes - Using LaTeX2e
+We want to add hyperlinks to your manuscript in the online version, so we recommend the use of LaTeX2e for the preparation of your camera-ready manuscript, together with the corresponding Springer class file - llncs2e.zip contains:
+(i) llncs.cls, Springer class file;
+(ii) llncs.dem, sample input file, you can use it as a source for your own input;
+(iii) llncs.doc (actually a TeX file), the documentation of the class, with detailed instructions
+on how the macro package works;
+(iv) llncs.dvi, DVI resulting out of llncs.doc.
+Please download llncs2e.zip.
+CS Proceedings and Other Multiauthor Volumes - Sample File
+We also provide the LaTeX2e source file of the "Authors' Instructions," which may serve as a further sample input. typeinst.zip contains a separate LaTeX file for the text and EPS file for the figure.
+Please download typeinst.zip.
+CS Proceedings and Other Multiauthor Volumes - Using Office 2007 Word
+We do not encourage the use of Microsoft Word, particularly as the layout of the pages (the position of figures and paragraphs) can change between printouts. However, we do provide the relevant template ("splnproc1110.dotm"). Please read the explanatory typing instructions "SPLNPROC Word 2007-2010 Technical Instructions.pdf" contained in the ZIP archive carefully.
+Please download splnproc1110.zip
+Word 2003 template for the preparation of CS proceeding papers
+A document template has been prepared by Springer for use with Word 2003. Predefined style formats are available for all the types of content that are part of a computer science proceedings paper, and these formats can be easily accessed via special toolbars.
+The downloadable zip archive contains:
+A pdf of the general guidelines for authors of computer science proceedings papers;
+A pdf of the instructions explaining how to work with the Word 2003 template;
+The Word 2003 template svlnproc1104.dot.
+CS Proceedings_Author Tools_Word 2003 (last update: April 19, 2011) (zip, 229 kB)
+Monographs - Using LaTeX2e
+We strongly suggest using current LaTeX2e for your Monograph.
+Please download the basic LaTeX package SVMono and check the readme.txt file first.
+Please download svmono.zip. (zip, 287 kB)
+Checklist of items to be sent to the volume editor
+Please submit the following to the volume editors (e.g., to your conference committee contact, not to the Springer editorial office):
+The final sources, incl. any non-standard fonts;
+A final PDF corresponding exactly to the final sources;
+A Springer copyright form, signed by one author on behalf of all of the other authors of the paper;
+The name and e-mail address of the contact author who will check the proof of the paper;
+A suggestion for an abbreviated running head, if appropriate;
+Information about the correct representation of authors' names, where necessary.
+The volume editors will check the contributions, decide upon their order in the volume, and will send the complete material on to Springer.
+Electronic supplementary material
+If you have supplementary material on your server that relates to your paper, please provide the volume editors with a short description and give them the relevant URL, etc. Springer will add a description of this material to the SpringerLink entry for your paper, and will create a link to your server.
+Springer author discount
+All Springer authors and journal editors are entitled to a discount on Springer books. Please click on the following link and fill out the form so that we can send you your SpringerToken. Using the SpringerToken you can order Springer books at the discounted price.
+Springer author discount
+Information for volume editors Authors of Computer Science Publications
+If you would like to know more about the tasks of the volume editors, please take a look at the following document:
