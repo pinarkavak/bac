@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.20)  21 OCT 2015 18:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.4.20)  22 OCT 2015 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,18 +621,6 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.16 s
-      \usepackage{algorithmic}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 (./algorithmic.sty
 Package: algorithmic 
 
@@ -749,11 +737,6 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-]
 
 LaTeX Font Warning: Font shape `LY1/cmr/bx/n' undefined
 (Font)              using `LY1/cmr/m/n' instead on input line 72.
@@ -779,7 +762,9 @@ LaTeX Font Warning: Font shape `LY1/cmr/m/it' undefined
 
 [1
 
-]
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -795,7 +780,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 }
+l.142 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -803,7 +788,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.136 }
+l.142 }
        
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -815,7 +800,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 }
+l.142 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -823,7 +808,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.136 }
+l.142 }
        
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -835,7 +820,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 }
+l.142 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -843,7 +828,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.136 }
+l.142 }
        
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -856,7 +841,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 }
+l.142 }
        
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -864,100 +849,41 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.136 }
+l.142 }
        
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
 none, so I've put one in; maybe that will work.
 
-<ionTorrentFastqc.jpg, id=20, 1601.985pt x 1107.13625pt>
-File: ionTorrentFastqc.jpg Graphic file (type jpg)
+<flowChart.png, id=14, 768.8725pt x 1102.1175pt>
+File: flowChart.png Graphic file (type png)
+ <use flowChart.png>
+Package pdftex.def Info: flowChart.png used on input line 145.
+(pdftex.def)             Requested size: 341.4374pt x 512.15982pt.
 
-<use ionTorrentFastqc.jpg>
-Package pdftex.def Info: ionTorrentFastqc.jpg used on input line 148.
+<ionTorrentFastqc.png, id=16, 1601.985pt x 1107.13625pt>
+File: ionTorrentFastqc.png Graphic file (type png)
+
+<use ionTorrentFastqc.png>
+Package pdftex.def Info: ionTorrentFastqc.png used on input line 163.
 (pdftex.def)             Requested size: 341.41342pt x 142.2603pt.
- [3] [4 <./ionTorrentFastqc.jpg>]
-Overfull \hbox (0.72661pt too wide) in paragraph at lines 180--181
-\LY1/cmr/bx/n/10 To eval-u-ate and com-pare the re-sult-ing and cor-rected as-s
+ [3] [4 <./flowChart.png>] [5 <./ionTorrentFastqc.png (PNG copy)>]
+Overfull \hbox (0.72661pt too wide) in paragraph at lines 200--201
+\LY1/cmtt/m/n/10 To eval-u-ate and com-pare the re-sult-ing and cor-rected as-s
 em-blies all-against-all we mapped
  []
 
-[5]
+[6]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.222   \STATE {alignmentLength \gets
-                                      matches + mismatches +  insertionInCon...
+l.247 ...gIdentity} + \textnormal{identity} \times
+                                                   \textnormal{contigLength}}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.222 ...atches + mismatches +  insertionInContig}
-                                                  \\
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.222 ...ches + mismatches +  insertionInContig}\\
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.222 ...ches + mismatches +  insertionInContig}\\
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.222 ...ches + mismatches +  insertionInContig}\\
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.223   \STATE {\textnormal{identity} \gets
-                                            $\left(\frac{\textnormal{matches...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.223   \STATE {\textnormal{identity} \gets $\left
-                                                  (\frac{\textnormal{matches...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.224   \STATE {~~~avgIdentity \gets
-                                     \textnormal{avgIdentity} + \textnormal{...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.224 ...entity} \times \textnormal{contigLength}}
+l.247 ...entity} \times \textnormal{contigLength}}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -972,7 +898,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225   \ENDWHILE
+l.248   \ENDWHILE
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -984,7 +910,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225   \ENDWHILE
+l.248   \ENDWHILE
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -996,7 +922,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225   \ENDWHILE
+l.248   \ENDWHILE
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1004,7 +930,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.225   \ENDWHILE
+l.248   \ENDWHILE
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1015,7 +941,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.225   \ENDWHILE
+l.248   \ENDWHILE
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1023,32 +949,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.226   \STATE{avgIdentity \gets
-                                 $\left(\frac{\textnormal{avgIdentity}}{\sum...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.226   \STATE{avgIdentity \gets $\left
-                                       (\frac{\textnormal{avgIdentity}}{\sum...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-<flowChart.png, id=33, 768.8725pt x 1102.1175pt>
-File: flowChart.png Graphic file (type png)
- <use flowChart.png>
-Package pdftex.def Info: flowChart.png used on input line 231.
-(pdftex.def)             Requested size: 341.4374pt x 512.15982pt.
-
-<BACAlgorithm1.png, id=35, 227.43794pt x 111.71147pt>
+<BACAlgorithm1.png, id=33, 227.43794pt x 111.71147pt>
 File: BACAlgorithm1.png Graphic file (type png)
  <use BACAlgorithm1.png>
-Package pdftex.def Info: BACAlgorithm1.png used on input line 238.
+Package pdftex.def Info: BACAlgorithm1.png used on input line 257.
 (pdftex.def)             Requested size: 341.4788pt x 142.27254pt.
 
 
@@ -1058,7 +962,7 @@ See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308        }
+l.327        }
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1070,7 +974,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308        }
+l.327        }
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1078,7 +982,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.308        }
+l.327        }
               
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -1086,12 +990,12 @@ none, so I've put one in; maybe that will work.
 
 
 LaTeX Font Warning: Font shape `LY1/cmr/bx/it' undefined
-(Font)              using `LY1/cmr/bx/n' instead on input line 308.
+(Font)              using `LY1/cmr/bx/n' instead on input line 327.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1099,7 +1003,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1110,7 +1014,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1118,7 +1022,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1129,7 +1033,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1137,7 +1041,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1148,7 +1052,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1156,7 +1060,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1167,7 +1071,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1175,122 +1079,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
-              
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Package array Error: >{..} at wrong position: token ignored.
-
-See the array package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.308        }
-              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing # inserted in alignment preamble.
-<to be read again> 
-                   \cr 
-l.308        }
-              
-There should be exactly one # between &'s, when an
-\halign or \valign is being set up. In this case you had
-none, so I've put one in; maybe that will work.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1304,7 +1093,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308        }
+l.327        }
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1312,7 +1101,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.308        }
+l.327        }
               
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -1321,7 +1110,7 @@ none, so I've put one in; maybe that will work.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1329,7 +1118,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1340,7 +1129,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1348,7 +1137,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1359,7 +1148,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1367,7 +1156,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1378,7 +1167,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1386,7 +1175,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1397,7 +1186,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1405,7 +1194,122 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Package array Error: >{..} at wrong position: token ignored.
+
+See the array package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327        }
+              
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   \cr 
+l.327        }
+              
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1420,7 +1324,7 @@ See the array package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.308        }
+l.327        }
               
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1428,7 +1332,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing # inserted in alignment preamble.
 <to be read again> 
                    \cr 
-l.308        }
+l.327        }
               
 There should be exactly one # between &'s, when an
 \halign or \valign is being set up. In this case you had
@@ -1437,7 +1341,7 @@ none, so I've put one in; maybe that will work.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1445,7 +1349,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1456,7 +1360,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1464,7 +1368,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1475,7 +1379,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1483,7 +1387,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1494,7 +1398,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1502,7 +1406,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1513,7 +1417,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1521,7 +1425,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.308        }
+l.327        }
               
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1529,25 +1433,25 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[6] [7 <./flowChart.png>] [8 <./BACAlgorithm1.png (PNG copy)>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+[7 <./BACAlgorithm1.png (PNG copy)>] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 366--367
+Underfull \hbox (badness 1062) in paragraph at lines 386--387
 []\LY1/cmr/m/it/9 E.W.Myers, G.G.Sutton, A.L.Delcher, I.M.Dew, D.P.Fasulo, M.J.
 Flanigan, S.A.Kravitz,
  []
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 369--370
+Underfull \hbox (badness 2503) in paragraph at lines 389--390
 \LY1/cmr/m/it/9 S.I.Nikolenko et al: SPAdes: A New Genome As-sem-bly Al-go-rith
 m and Its Ap-pli-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 369--370
+Underfull \hbox (badness 2080) in paragraph at lines 389--390
 \LY1/cmr/m/it/9 ca-tions to Single-Cell Se-quenc-ing, Jour-nal of Com-pu-ta-tio
 nal Bi-ol-ogy, 19(5):455-477,
  []
@@ -1560,33 +1464,31 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 4110 strings out of 495028
- 52970 string characters out of 6181497
- 188534 words of memory out of 5000000
- 7223 multiletter control sequences out of 15000+600000
+ 4112 strings out of 495028
+ 53017 string characters out of 6181497
+ 187246 words of memory out of 5000000
+ 7226 multiletter control sequences out of 15000+600000
  13051 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,15n,53p,1583b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,15n,53p,1457b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb>
+lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 Output written on ImprovingGenomeAssembliesUsingMultiPlatformSequenceData.pdf (
-14 pages, 460658 bytes).
+12 pages, 353278 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
