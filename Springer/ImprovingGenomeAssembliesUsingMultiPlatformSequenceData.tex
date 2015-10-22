@@ -337,36 +337,41 @@ In Table \ref{tab:resultsTable}, we see that the assembly of 454 reads perform b
 
 \subsection{Assemblers}
 
-On Table \ref{tab:resultsTable}, the assembly obtained by Velvet with only short Illumina reads has good coverage  (99\%) and average identity rates (97.5\%). The number of contigs obtain with Velvet assembly is 455, of which 437 maps to the reference. There are 39 gaps and the total size of the gaps is 1,671 bp. Our aim was to increase the coverage, improve the average identity and decrease the number of contigs and gaps, and shrink the lengths of the gaps.
+On Table \ref{tab:resultsTable}, the assembly obtained by Velvet with only short Illumina reads showed good coverage  (99\%) and average identity rates (97.5\%). The number of contigs obtain with Velvet assembly is 455, of which 437 maps to the reference. There are 39 gaps and the total size of the gaps is 1,671 bp. Our aim was to increase the coverage, improve the average identity and decrease the number of contigs and gaps, and shrink the lengths of the gaps.
 
 Since we observed that 454 reads resulted better assembly than Ion Torrent reads in Section \ref{454Ion}, we compared different assemblers through 454 contigs. The assembly of Celera with the 454 long reads has 97.5\% coverage and 92.6\% average identity, which are lower than Illumina-Velvet values. Number of contigs (735) is reasonable but number of gaps and total gap length are high (18 and 4,280 bp, respectively). 
-SGA assembly using 454 reads has very high coverage (99.83\%) and identity (97.4\%). It has just one gap with size 297 bp, but the number of contigs is also very high (101,514), which is an unwelcome situation. SPAdes-454 assembly has also high number of contigs (49,824) which completely cover the reference sequence with 98\% average identity. SPAdes has less contig numbers and higher coverage and average identity than SGA. 
-If we evaluate the results according to the number of contigs, Celera-454 results seem more reasonable than SGA or SPAdes results, since it has reasonable number of contigs even with low coverage and average identity.
+SGA assembly using 454 reads has very high coverage (99.83\%) and identity (97.4\%). It has just one gap with size 297 bp, but the number of contigs is also very high (101,514), which is an unwelcome situation. SPAdes-454 assembly also had a large number of contigs (49,824) which completely cover the reference sequence with 98\% average identity. SPAdes assembly resulted in lower number of contigs  and had higher coverage and average identity than SGA. 
+If we evaluate the results according to the number of contigs, Celera-454 results seem more reasonable than SGA or SPAdes results, since it returned a reasonable number of contigs even with low coverage and average identity.
 
 \subsection{Correction}
 
-We observed that the correction method improved the 454 and also Ion Torrent read assemblies generated with all assemblers we tested(Table \ref{tab:resultsTable}). In the remainder of the paper, we only
+We observed that the correction method improved both 454 and Ion Torrent based assemblies generated with all assemblers we tested (Table \ref{tab:resultsTable}). In the remainder of the paper, we only
 mention the 454-based assemblies for simplicity.
 
-When we applied our correction method on Celera-454 assembly with the Velvet-Illumina assembly, we achieved better coverage and average identity rates: the coverage of 454 assembly increases up to 99.7\% and the average identity rate increases up to 94.4\% on the first correction cycle. The second correction cycle increases the coverage and average identity rates up to 99.7\% and 94.5\% and convergences. The number of contigs decrease down to 245 from 735, and the gap number decreases down to 4 with total size 500 from 18 (size:4,280). Since the third correction cycle does not give better results it is not given on Table \ref{tab:resultsTable}.
+When we applied our correction method on Celera-454 assembly using the Velvet-Illumina assembly, we achieved better coverage and average identity rates: the coverage of 454 assembly increases up to 99.7\% and the average identity rate increases up to 94.4\% on the first correction cycle. The second correction cycle increases the coverage and average identity rates up to 99.7\% and 94.5\%, the correction converges. The number of contigs decrease to 245 from 735, and the number of gaps decrease down to 4 (500 bp) from 18 (4,280 bp). Since the third correction cycle does not give better results it is not shown on Table \ref{tab:resultsTable}.
 
-Our correction method increases the coverage of SGA-454 assembly up to 99.9\% from 99.8\% but with less average identity and with more gaps even the total size of the gaps is shorter. Correction with the short read assembly decreases the contig number down to a reasonable number (335). Corrected SGA assembly has the largest coverage rate among all, and it is also better than Velvet-Illumina assembly.
+Our correction method increased the coverage of SGA-454 assembly up to 99.9\% from 99.8\% but with less average identity and with more gaps although the total length of the gaps is decreased. Correction using the short read assembly decreased the number of contigs down to a reasonable number (335). Corrected SGA assembly has the largest coverage rate among all, and also with more identity than Velvet-Illumina assembly.
 
-The number of contigs in SPAdes assembly is also decreased to 298 from 49,691 with the correction method. With the decrease in contig numbers the coverage also decreased (99.7\%) as well as average identity (96.5\%). The gap number increased to 5 from 0 with total size 389.
+The number of contigs in SPAdes assembly also decreased to 298 from 49,691 using our correction method. With the decrease in number of contigs, the coverage also decreased (99.7\%) as well as the average identity (96.5\%). The number of gaps increased to 5 from 0 with total size 389.
 
-So, in all kind of assemblers' results we saw that assembly correction by using advantages of different technologies improves the resulting assembly.
+In summary, we obtained substantial assembly correction
+ in draft assemblies by using advantages of different technologies.
 
 \subsection{Hybrid Assemblers}
 
-We also wondered the results of two hybrid assemblers on our multiple type of data. We ran Masurca and Celera-CABOG with default parameters given two groups of hybrid data as input: Illumina \& 454 and Illumina \& Ion Torrent. Hybrid assemblers Masurca and CABOG did not have good assembly rates. We got zero coverage rate with 454 and Illumina reads with Masurca. The only contig left after the contamination removal did not map to the reference sequence. We also got very low coverage (1.1\%) with 98.2\% average identity  with Ion Torrent \& Illumina reads. So, we can say Masurca did not work very well in our case with our data types. 
+We also compared the results of two hybrid assemblers on our multiple type of data. We ran Masurca and Celera-CABOG with default parameters given two groups of hybrid data as input: Illumina \& 454 and Illumina \& Ion Torrent. Hybrid assemblers Masurca and CABOG did not show good assembly rates.
+ We obtained zero coverage  with 454 and Illumina reads using Masurca. The only contig left after the contamination removal did not map to the reference sequence. We also observed very low coverage (1.1\%) with 98.2\% average identity  with Ion Torrent \& Illumina reads. Therefore, we conclude that Masurca did not work very well in our case with our data types. 
 
-We got 0\% coverage with Ion Torrent \& Illumina with CABOG. All of the resulting contigs obtained from the assembly were removed as contamination. CABOG did not work well on Illumina \& Ion Torrent but it worked pretty good on Illumina \& 454 with 98.58\% coverage and 92.5\% average identity. It has 891 contigs and 12 gaps with total size 2,513. Still, it can not catch the corrected assembly results.
+Similarly. we obtaied zero coverage with Ion Torrent \& Illumina using CABOG. All of the resulting contigs obtained from the assembly were removed as contamination. However, CABOG performed substantially better with
+Illumina \& 454, and generated assembly with 98.58\% coverage and 92.5\% average identity.
+The assembly compsed of 891 contigs and 12 gaps with total gap length of 2,513 bp. Still, 
+the performance of CABOG was not better than the  corrected assembly results described above.
 
 \section{Conclusion}
 
-We presented a new method to improve draft assemblies by correcting high contiguity assemblies using the contigs obtained with high quality reads. Assembling short and long reads seperately with de Bruijn graph based and OLC graph based assemblers according to data types and then using correction methods like this one on the resulting assemblies give better results than just using hybrid assemblers with both short and long reads. Our method is useful and it gives better results than using all data for once with a hybrid assembler. 
+Here we presented a new method to improve draft assemblies by correcting high contiguity assemblies using the relatively more fragmented contigs obtained using high quality short reads. Assembling short and long reads seperately using both de Bruijn and OLC graph based assemblers according to data types and then using correction methods  gives better results than using only hybrid assemblers.
 
-However, the need to develop new methods that exploit different data properties of different HTS technologies, such as short/long reads or high/low quality of reads, remains. In this manner, as future work, our correction algorithm can be improved by exploiting the paired end information of the short, high quality reads after the correction phase, to fill in the gaps between corrected contigs.
+However, the need to develop new methods that exploit different data properties of different HTS technologies, such as short/long reads or high/low quality of reads, remains. In this manner, as future work, our correction algorithm can be improved by exploiting the paired end information of the short, high quality reads after the correction phase to close the gaps between corrected contigs.
 
 \paragraph{Funding.}
 
